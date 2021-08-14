@@ -1,0 +1,43 @@
+html{font-size: 10px;}
+
+body{font-family: arial,sans-serif;
+	font-size: 2em; 
+	display: grid;
+	 grid-template-columns: 1fr 5fr; 
+	grid-template-areas: "aside section";
+	grid-gap: 10px;}
+
+h1,h2,h3,h4,h5,h6{text-transform: capitalize;
+	line-height: 0.2;
+	font-weight: normal;}
+
+h1{font-size: 3em;}
+
+h2{font-size: 2.5em;}
+
+aside{grid-area: aside;}
+
+section{grid-area: section;}
+a{text-decoration: none;}
+
+aside li{list-style: none;}
+ li{line-height: 1.3;}
+li span{font-weight: bold;}
+
+.ml-2{margin-left: 2em;}
+.mb-1{margin-bottom: 1em;}
+.mb-2{margin-bottom:2em}
+.mb-4{margin-bottom: 4em;}
+.ms-2{margin-top:2em ;}
+.ms-4{margin-top: 4em;}
+
+.text{color: white;padding: 5px 10px;text-shadow: 1px 1px 1px black;width: 120px;text-align: center;}
+.text.success{background: green}
+.text.warning{background: orange}
+.text.danger{background: red;}
+.text-danger{color: red;}
+
+.book_view p{margin: 0;}
+.capitalize{text-transform: capitalize;}
+
+

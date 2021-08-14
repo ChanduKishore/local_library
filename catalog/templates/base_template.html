@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{%block title%} Book catalog {%endblock%}</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+
+</head>
+<body>
+
+	<aside>
+		{%block sidebar%}
+		<ul>
+			<li><a href="{% url 'index' %}">Home</a> </li>
+			<li><a href="{% url 'books' %}">Books</a> </li>
+			<li><a href="{% url 'authors' %}">Authors</a> </li>
+		</ul>
+
+		
+		<ul>
+			{%if user.is_authenticated %}
+			<li class="capitalize">{{request.user}}</li>
+			<li class=""><a href="{% url 'my_books' %}">My Books</a></li>
+			<li><a href="{% url 'logout' %}">logout</a></li>
+			{%else%}
+			<li><a href="{% url 'login' %}">login</a></li>
+			{%endif%}
+			</ul>
+	
+		<ul>
+			{%if perms.catalog.can_mark_returned %}
+			<li>Staff Member</li>
+			<li><a href="{% url 'all_books' %}">All Barrows</a></li>
+			{%endif%}
+		</ul>
+
+	
+		{%endblock%}
+	</aside>
+	<section>
+		{%block content%}
+		{%endblock%}
+	<section>
+	
+
+
+</body>
+</html>

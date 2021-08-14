@@ -1,0 +1,18 @@
+{% extends 'base_template.html' %}
+
+{% block title %} books {% endblock %}
+
+{% block content %}
+
+{% if book_list %}
+<p>Available Books </p>
+<ul>
+{% for book in book_list %}
+<li class="capitalize"><a href="{{book.get_absolute_url}}">{{book.title}}</a> ({{book.author}})</li>
+{% endfor %}
+</ul>
+{% else %}
+<p> No books avaliable</p>
+{% endif %}
+
+{% endblock %}

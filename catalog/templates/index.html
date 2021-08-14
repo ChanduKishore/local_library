@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+
+{%block title%}index{%endblock%}
+
+{%block content%}
+<h1>the local library</h1>
+<p>welcome to local library developed by Mr.chandu kishore</p>
+<h2>Dynamic content</h2>
+<p>this libaray contains following content counts:</p>
+<ul>
+	<li><span>Books:</span> {{book_count}}</li>
+	<li><span>Authors:</span> {{authors_count}}</li>
+	<li><span>Copies:</span> {{book_instance_count}}</li>
+	<li><span>Copies Available:</span> {{avaliable_books}}</li>
+	<li><span>Genre Available: </span> {{genre}}</li>
+
+</ul>
+<p> you have visited this page {{num_visits}} time{{num_visits|pluralize}}</p>
+
+{%endblock%}

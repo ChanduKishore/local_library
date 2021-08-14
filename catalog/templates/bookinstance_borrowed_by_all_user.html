@@ -1,0 +1,12 @@
+{% extends 'base_template.html' %}
+
+{% block title%}Books Borrowed {% endblock %}
+
+{% block content %}
+<h1>all barrows</h1>
+<ul>
+{% for bookinst in bookinstance_list %}
+
+<li class="{% if bookinst.is_overdue%} text-danger {%endif%}"><a href="{{bookinst.book.get_absolute_url}}">{{bookinst.book.title}}</a>  Due Date: {{bookinst.due_back}} (Barrower: {{bookinst.borrower}})</li>
+{%endfor%}
+{% endblock%}
